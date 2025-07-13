@@ -42,16 +42,28 @@ const FilterBar = ({ onFilterChange }) => {
           placeholder="Resource ID"
           onChange={(e) => setResourceId(e.target.value)}
         />
-        <input
-          className="p-2 border border-gray-300 rounded w-full"
-          type="datetime-local"
-          onChange={(e) => setTimestampStart(e.target.value)}
-        />
-        <input
-          className="p-2 border border-gray-300 rounded w-full"
-          type="datetime-local"
-          onChange={(e) => setTimestampEnd(e.target.value)}
-        />
+       <div className="flex flex-col gap-1">
+  <label htmlFor="startDate" className="text-sm font-medium text-gray-700">
+    Start Date & Time
+  </label>
+  <input
+    id="startDate"
+    type="datetime-local"
+    onChange={(e) => setTimestampStart(e.target.value)}
+    className="p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full shadow-sm"
+  />
+</div>
+<div className="flex flex-col gap-1">
+  <label htmlFor="startDate" className="text-sm font-medium text-gray-700">
+    End Date & Time
+  </label>
+  <input
+    id="endDate"
+    type="datetime-local"
+    onChange={(e) => setTimestampEnd(e.target.value)}
+    className="p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full shadow-sm"
+  />
+</div>
         <button
           onClick={applyFilters}
           className="bg-blue-600 text-white rounded p-2 w-full hover:bg-blue-700 transition"
